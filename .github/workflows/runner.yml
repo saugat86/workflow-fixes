@@ -32,8 +32,8 @@
           - name: Upload Terraform Plan File
             uses: actions/upload-artifact@v4
             with:
-              name: terraform/plan_${{ github.run_id }}_${{ github.job }}.txt  
-              path: terraform/plan.txt
+              name: terraform_plan_${{ github.run_id }}.txt  
+              path: terraform_plan.txt
               retention-days: 3
 
           - name: Make file 2
@@ -44,8 +44,8 @@
           - name: Upload Terraform Plan File
             uses: actions/upload-artifact@v4
             with:
-              name: terraform/plan_${{ github.run_id }}_${{ github.job }}.txt  
-              path: terraform/plan.txt
+              name: terraform_plan_${{ github.run_id }}_${{ github.job }}.txt  
+              path: terraform_plan.txt
               retention-days: 3
   
          
