@@ -45,6 +45,7 @@
             with:
               name: terraform_plan.txt  
               path: terraform_plan.txt
+              overwrite: true
               retention-days: 3
   
          
