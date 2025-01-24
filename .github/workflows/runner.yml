@@ -24,10 +24,10 @@
         steps:
           - name: Check out code
             uses: actions/checkout@v3
+
           - name: Make file
             run: |
-              mkdir -p terraform
-              touch terraform/plan.txt  
+              touch terraform_plan.txt  
   
           - name: Upload Terraform Plan File
             uses: actions/upload-artifact@v4
@@ -38,13 +38,12 @@
 
           - name: Make file 2
             run: |
-              mkdir -p terraform
-              touch terraform/plan.txt  
+              touch terraform_plan.txt  
   
           - name: Upload Terraform Plan File
             uses: actions/upload-artifact@v4
             with:
-              name: terraform_plan_${{ github.run_id }}_${{ github.job }}.txt  
+              name: terraform_plan_${{ github.run_id }}.txt  
               path: terraform_plan.txt
               retention-days: 3
   
