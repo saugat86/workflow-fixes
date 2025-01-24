@@ -30,7 +30,7 @@
               touch terraform_plan.txt  
   
           - name: Upload Terraform Plan File
-            uses: actions/upload-artifact@v4.0.6
+            uses: actions/upload-artifact@v4.6.0
             with:
               name: terraform_plan.txt  
               path: terraform_plan.txt
@@ -41,7 +41,7 @@
               touch terraform_plan.txt  
   
           - name: Upload Terraform Plan File
-            uses: actions/upload-artifact@v4.0.6
+            uses: actions/upload-artifact@v4.6.0
             with:
               name: terraform_plan.txt  
               path: terraform_plan.txt
