@@ -30,7 +30,6 @@
               touch terraform/plan.txt  
   
           - name: Upload Terraform Plan File
-            if: steps.plan.outcome == 'success'
             uses: actions/upload-artifact@v4
             with:
               name: terraform/plan_${{ github.run_id }}_${{ github.job }}.txt  
@@ -43,7 +42,6 @@
               touch terraform/plan.txt  
   
           - name: Upload Terraform Plan File
-            if: steps.plan.outcome == 'success'
             uses: actions/upload-artifact@v4
             with:
               name: terraform/plan_${{ github.run_id }}_${{ github.job }}.txt  
