@@ -32,7 +32,7 @@
           - name: Upload Terraform Plan File
             uses: actions/upload-artifact@v4
             with:
-              name: terraform_plan_${{ github.run_id }}.txt  
+              name: terraform_plan_$(date +'%Y%m%d%H%M%S').txt  
               path: terraform_plan.txt
               retention-days: 3
 
@@ -43,7 +43,7 @@
           - name: Upload Terraform Plan File
             uses: actions/upload-artifact@v4
             with:
-              name: terraform_plan_${{ github.run_id }}.txt  
+              name: terraform_plan_$(date +'%Y%m%d%H%M%S').txt  
               path: terraform_plan.txt
               retention-days: 3
   
