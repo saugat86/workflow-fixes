@@ -1,4 +1,4 @@
-name: ${{ github.event.inputs.workflow_name != '' && github.event.inputs.workflow_name || 'CI Workflow' }}
+name: "${{ github.event.inputs.workflow_name != '' && github.event.inputs.workflow_name || 'CI Workflow' }}"
 on:
   workflow_dispatch:
     inputs:
