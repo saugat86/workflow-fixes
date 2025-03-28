@@ -1,51 +1,51 @@
----
-    # .github/workflows/terraform-workflow.yaml
-    name: GitHub runner
-    run-name: "[${{ github.event_name }} - ${{ github.ref_name }}] Terraform executed by @${{ github.actor }}"
+# ---
+#     # .github/workflows/terraform-workflow.yaml
+#     name: GitHub runner
+#     run-name: "[${{ github.event_name }} - ${{ github.ref_name }}] Terraform executed by @${{ github.actor }}"
   
-    on:
-      push:
-        branches:
-          - main
-      pull_request:
-        branches:
-          - main
+#     on:
+#       push:
+#         branches:
+#           - main
+#       pull_request:
+#         branches:
+#           - main
   
-    permissions:
-      id-token: write
-      contents: read
-      pull-requests: write
+#     permissions:
+#       id-token: write
+#       contents: read
+#       pull-requests: write
   
-    jobs:
-      plan_apply:
-        name: plan_apply
-        runs-on: ubuntu-20.04
+#     jobs:
+#       plan_apply:
+#         name: plan_apply
+#         runs-on: ubuntu-20.04
   
-        steps:
-          - name: Check out code
-            uses: actions/checkout@v3
+#         steps:
+#           - name: Check out code
+#             uses: actions/checkout@v3
 
-          - name: Make file
-            run: |
-              touch terraform_plan.txt  
+#           - name: Make file
+#             run: |
+#               touch terraform_plan.txt  
   
-          - name: Upload Terraform Plan File
-            uses: actions/upload-artifact@v4.6.0
-            with:
-              name: terraform_plan.txt  
-              path: terraform_plan.txt
-              retention-days: 3
+#           - name: Upload Terraform Plan File
+#             uses: actions/upload-artifact@v4.6.0
+#             with:
+#               name: terraform_plan.txt  
+#               path: terraform_plan.txt
+#               retention-days: 3
 
-          - name: Make file 2
-            run: |
-              touch terraform_plan.txt  
+#           - name: Make file 2
+#             run: |
+#               touch terraform_plan.txt  
   
-          - name: Upload Terraform Plan File
-            uses: actions/upload-artifact@v4.6.0
-            with:
-              name: terraform_plan.txt  
-              path: terraform_plan.txt
-              overwrite: true
-              retention-days: 3
+#           - name: Upload Terraform Plan File
+#             uses: actions/upload-artifact@v4.6.0
+#             with:
+#               name: terraform_plan.txt  
+#               path: terraform_plan.txt
+#               overwrite: true
+#               retention-days: 3
   
          

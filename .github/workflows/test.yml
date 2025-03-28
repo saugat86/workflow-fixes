@@ -1,11 +1,11 @@
-name: Test Workflow ${{ github.event.inputs.workflow_name || github.event_name }}
+name: ${{ github.event.inputs.workflow_name != '' && github.event.inputs.workflow_name || 'CI Workflow' }}
 on:
   workflow_dispatch:
     inputs:
       workflow_name:
         description: 'Custom workflow name'
         required: false
-        default: 'Default'
+        default: ''
         type: string
 env:
   # Setting an environment variable with the value of a configuration variable
