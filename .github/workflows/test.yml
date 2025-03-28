@@ -1,6 +1,12 @@
-name: Test Workflow
+name: Test Workflow ${{ github.event.inputs.workflow_name || github.event_name }}
 on:
- workflow_dispatch:
+  workflow_dispatch:
+    inputs:
+      workflow_name:
+        description: 'Custom workflow name'
+        required: false
+        default: 'Default'
+        type: string
 env:
   # Setting an environment variable with the value of a configuration variable
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
@@ -14,4 +20,4 @@ jobs:
           node-version: '18'
       - name: Install Dependencies
         run: |
-         echo "Installing Dependencies....!"
+          echo "Installing Dependencies....!"
